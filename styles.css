@@ -1,0 +1,1135 @@
+/* ==========================================================================
+   Delivery Tools
+   Polyfill: https://autoprefixer.github.io/
+   Minify: https://www.minifier.org/
+   ========================================================================== */
+/* ==========================================================================
+   Reset Styles
+   ========================================================================== */
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Fira Sans", sans-serif;
+  -webkit-transition: -webkit-filter 300ms ease;
+  transition: -webkit-filter 300ms ease;
+  transition: filter 300ms ease;
+  transition: filter 300ms ease, -webkit-filter 300ms ease;
+}
+
+body.blur section:not(#mobile-lead-form) {
+  -webkit-transition: -webkit-filter 300ms ease;
+  transition: -webkit-filter 300ms ease;
+  transition: filter 300ms ease;
+  transition: filter 300ms ease, -webkit-filter 300ms ease;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+::-moz-selection {
+  background-color: #6e298d;
+  color: #8cc63f;
+}
+::selection {
+  background-color: #6e298d;
+  color: #8cc63f;
+}
+
+p {
+  font-family: "Helvetica Neue", "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+@media (max-width: 1920px) {
+  p {
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333;
+  font-family: "Fira Sans";
+}
+
+h2.heading {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 61px;
+}
+
+@media (max-width: 1920px) {
+  h2.heading {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2.heading {
+    font-size: 23px;
+    line-height: 26px;
+  }
+}
+
+h3.heading {
+  font-family: "Fira Sans";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+@media (max-width: 1920px) {
+  h3.heading {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media (max-width: 768px) {
+  h3.heading {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+h5.subheading {
+  color: #333333;
+  font-family: "Fira Sans";
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+@media (max-width: 1920px) {
+  h5.subheading {
+    font-size: 19px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  h5.subheading {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.text-primary {
+  color: #8cc63f !important;
+}
+
+a.text-primary:hover, a.text-primary:active,
+button.text-primary:hover,
+button.text-primary:active {
+  color: #638e2a !important;
+}
+
+.text-link {
+  color: #1081e0;
+}
+
+a.text-link:hover, a.text-link:active,
+button.text-link:hover,
+button.text-link:active {
+  color: #0b5899 !important;
+}
+
+.highlight-text {
+  padding: 0 6px;
+  background-color: rgba(140, 198, 63, 0.19);
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1640px;
+  }
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul {
+  list-style: initial;
+  padding-left: 40px;
+}
+
+.check-bullets {
+  padding-left: 25px;
+  list-style: initial;
+}
+
+.check-bullets li {
+  padding-left: 12px;
+  margin-bottom: 14px;
+  list-style-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/green-checkmark.png");
+  color: #333333;
+  font-family: "Fira Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (max-width: 992px) {
+  .check-bullets li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.btn-primary:not(:disabled):not(.disabled) {
+  background-color: #8cc63f;
+  color: #ffffff;
+  font-family: Mukta;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  line-height: 69px;
+  text-transform: uppercase;
+  border: initial;
+  padding: 0 32px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.btn-primary:not(:disabled):not(.disabled):hover, .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #6f9e32;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(111, 158, 50, 0.8);
+          box-shadow: 0px 10px 20px 0px rgba(111, 158, 50, 0.8);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.btn-primary:not(:disabled):not(.disabled):focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  .btn-primary:not(:disabled):not(.disabled) {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    line-height: 39px;
+  }
+}
+
+.floating, .form-group.floating-label .form-control:focus ~ label, .form-group.floating-label .form-control:not(:placeholder-shown) ~ label {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  height: 16px !important;
+  top: -16px;
+  margin: 0;
+}
+
+.hide-placeholder::-webkit-input-placeholder, .form-group.floating-label .form-control::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: transparent !important;
+}
+
+.hide-placeholder:-moz-placeholder, .form-group.floating-label .form-control:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: transparent !important;
+}
+
+.hide-placeholder::-moz-placeholder, .form-group.floating-label .form-control::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: transparent !important;
+}
+
+.hide-placeholder:-ms-input-placeholder, .form-group.floating-label .form-control:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: transparent !important;
+}
+
+.form-group {
+  position: relative;
+  background-color: white;
+  margin-bottom: 0;
+}
+
+.form-group.floating-label .form-control,
+.form-group.floating-label label {
+  color: #888888;
+  font-family: "Helvetica Neue";
+  color: #888888;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 36px;
+  height: 36px;
+}
+
+@media (max-width: 1200px) {
+  .form-group.floating-label .form-control,
+  .form-group.floating-label label {
+    height: 28px;
+    font-size: 17px;
+    line-height: 28px;
+    background-color: transparent;
+  }
+}
+
+.form-group.floating-label .form-control {
+  border: initial;
+  border-radius: 0;
+  border-bottom: 1px solid #707070;
+  padding-left: 10px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.form-group.floating-label .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #8cc63f;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  caret-color: #8cc63f;
+}
+
+.form-group.floating-label label {
+  padding-left: 10px;
+  position: absolute;
+  top: -5px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+@media (max-width: 1200px) {
+  .form-group.floating-label label {
+    top: 0;
+  }
+}
+
+form[_lpChecked] .form-control:invalid,
+.form-control.error {
+  background-color: rgba(255, 118, 0, 0.15) !important;
+}
+
+.background-triangles {
+  background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/background-triangles.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.background-triangles img {
+  width: 100%;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+header {
+  position: relative;
+  z-index: 4;
+  background-color: transparent;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  top: 0;
+}
+
+header .logo,
+header .links ul {
+  padding: 16px 0;
+}
+
+header .links a {
+  padding: 20px 30px 10px;
+  color: #333333;
+  font-family: "Fira Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+header .links a:hover {
+  color: #0d0d0d;
+  text-decoration: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+header .links a.call-to-action {
+  color: #8cc63f;
+}
+
+header .links a.call-to-action:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(140, 198, 63, 0.13);
+          box-shadow: 0 10px 20px rgba(140, 198, 63, 0.13);
+  border-radius: 5px;
+  background-color: #ffffff;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+@media (max-width: 1200px) {
+  header {
+    height: 70px;
+  }
+  header.bg-white {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  header .navbar-toggler {
+    border: initial;
+  }
+  header .navbar-toggler:active, header .navbar-toggler:focus {
+    outline: none;
+  }
+}
+
+/* ==========================================================================
+   Intro Hero
+   ========================================================================== */
+#intro-hero {
+  position: relative;
+  margin-top: 70px;
+  top: -30px;
+  padding-top: 30px;
+  padding-bottom: 42.65692%;
+}
+
+#intro-hero .background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/fha-loan-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#intro-hero .background#background-va {
+  display: none;
+  background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/va-loan-hero.png");
+}
+
+#intro-hero .block {
+  max-width: 660px;
+  left: 78px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#intro-hero .block#va {
+  display: none;
+  max-width: 612px;
+  left: initial;
+  right: 137px;
+}
+
+#intro-hero .block#va .heading {
+  color: white;
+}
+
+#intro-hero .block#va .check-bullets li {
+  color: white;
+}
+
+#intro-hero .block .check-bullets {
+  margin-top: 24px;
+}
+
+@media (max-width: 1200px) {
+  #intro-hero {
+    top: initial;
+  }
+  #intro-hero .block#fha {
+    max-width: 500px;
+    left: 15px;
+  }
+  #intro-hero .block#va {
+    max-width: 500px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  #intro-hero {
+    margin-bottom: 15rem;
+  }
+  #intro-hero .block {
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    padding: 16px 12px;
+    border-radius: 5px;
+    max-width: 422px !important;
+    width: 100%;
+    margin: 0 auto;
+    left: 50% !important;
+    right: initial !important;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: calc(100% - 45px);
+  }
+  #intro-hero .block .heading {
+    color: #333333 !important;
+    font-size: 23px;
+    line-height: 26px;
+    text-align: center;
+  }
+  #intro-hero .block .check-bullets {
+    max-width: 252px;
+    display: block;
+    margin: 0 auto;
+  }
+  #intro-hero .block .check-bullets li {
+    color: #333333 !important;
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: 576px) {
+  #intro-hero .block {
+    max-width: 302px !important;
+  }
+  #intro-hero .block .check-bullets {
+    max-width: 232px;
+  }
+}
+
+/* ==========================================================================
+   Lead Form
+   ========================================================================== */
+#lead-form {
+  position: relative;
+  top: -100px;
+}
+
+#lead-form .form-container {
+  padding: 18px 31px 10px 34px;
+  -webkit-box-shadow: 0 13px 26px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 13px 26px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+#lead-form .form-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+#lead-form .form-container .form .form-group:not(:first-child) {
+  margin-left: 23px;
+}
+
+#lead-form .form-container .form .form-group:last-child {
+  margin-left: 39px;
+}
+
+#lead-form .form-container .form .form-group .form-control,
+#lead-form .form-container .form .form-group label {
+  height: 28px;
+  font-size: 17px;
+  line-height: 28px;
+}
+
+#lead-form .form-container .form .btn-primary {
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 69px;
+  width: 214px;
+}
+
+#lead-form .form-container .form-text {
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #888888;
+}
+
+@media (max-width: 1200px) {
+  #lead-form {
+    top: -50px;
+  }
+  #lead-form .form-container .form .btn-primary {
+    width: 184px;
+    white-space: nowrap;
+  }
+  #lead-form #mobile-quote {
+    width: 162px;
+    padding: 0 18px;
+    -webkit-transition: width 300ms ease;
+    transition: width 300ms ease;
+  }
+  #lead-form #mobile-quote.sticky {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    z-index: 3;
+  }
+  #lead-form #mobile-quote.expand {
+    width: 100vw;
+    -webkit-transition: width 300ms ease;
+    transition: width 300ms ease;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+  }
+  #lead-form #mobile-quote.open {
+    -webkit-transform: translate(-50%, calc(-100% - 60px));
+            transform: translate(-50%, calc(-100% - 60px));
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+  }
+}
+
+@media (max-width: 768px) {
+  #lead-form {
+    top: initial;
+  }
+}
+
+/* ==========================================================================
+   Mobile Lead Form
+   ========================================================================== */
+#mobile-lead-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#mobile-lead-form.slideInDown {
+  z-index: 6;
+}
+
+#mobile-lead-form .container {
+  position: relative;
+  z-index: 7;
+  -webkit-filter: blur(-4px);
+          filter: blur(-4px);
+}
+
+#mobile-lead-form .container #close {
+  position: absolute;
+  top: calc(-20px + 29px);
+  right: calc(-45px + 27px);
+}
+
+#mobile-lead-form .container .logo {
+  margin-top: 95px;
+  margin-bottom: 30px;
+}
+
+#mobile-lead-form .container .subheading {
+  color: #2c2c2c;
+  font-family: "Fira Sans";
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 60px;
+}
+
+#mobile-lead-form .container .form-group {
+  background-color: transparent;
+}
+
+#mobile-lead-form .container .form-control {
+  margin-bottom: 50px;
+}
+
+#mobile-lead-form .container .form-text {
+  font-family: "Helvetica Neue";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #888888;
+  width: 202px;
+  margin: 32px auto 0;
+}
+
+/* ==========================================================================
+   Value Props
+   ========================================================================== */
+#value-props .icon {
+  height: 150px;
+}
+
+@media (max-width: 1200px) {
+  #value-props .value-prop .icon {
+    height: initial;
+  }
+  #value-props .value-prop p {
+    max-width: 167px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==========================================================================
+   Reviews
+   ========================================================================== */
+#reviews #typing {
+  color: #7b7b7b;
+}
+
+#reviews .reviews {
+  padding-top: 5rem;
+}
+
+/* ==========================================================================
+   Affiliations
+   ========================================================================== */
+#affiliations {
+  background: linear-gradient(169deg, #6e298d 0%, #44298d 100%);
+}
+
+/* ==========================================================================
+   Loan Calculator
+   ========================================================================== */
+#calculator p {
+  margin-bottom: 60px;
+}
+
+#calculator #input-fields {
+  height: 474px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #bfbfbf;
+  padding-left: calc(54px - 15px);
+  padding-right: calc(72px - 15px);
+  padding-top: 26px;
+  padding-bottom: 23px;
+}
+
+#calculator #input-fields input {
+  height: 58px;
+  line-height: 58px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  background-color: #ffffff;
+  margin-bottom: 23px;
+  padding-left: 22px;
+  font-family: "Helvetica Neue";
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+}
+
+#calculator #input-fields input::-webkit-input-placeholder, #calculator #input-fields input:-moz-placeholder, #calculator #input-fields input::-moz-placeholder, #calculator #input-fields input:-ms-input-placeholder {
+  color: #bfbfbf !important;
+}
+
+#calculator #input-fields input:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem #8cc63f;
+          box-shadow: 0 0 0 0.2rem #8cc63f;
+}
+
+#calculator #input-fields .btn {
+  width: 100%;
+  line-height: 58px;
+  border-radius: 5px;
+  background-color: #8cc63f;
+  color: #ffffff;
+  font-family: Mukta;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.85px;
+  text-transform: uppercase;
+}
+
+#calculator #input-fields .btn:active {
+  -webkit-box-shadow: 0 0 0 0.2rem #6e298d;
+          box-shadow: 0 0 0 0.2rem #6e298d;
+}
+
+#calculator #results {
+  padding-top: 81px;
+  padding-bottom: 78px;
+  height: 474px;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #bfbfbf;
+  border-left: initial;
+  position: relative;
+}
+
+#calculator #results .payment-title {
+  color: #333333;
+  font-family: "Fira Sans";
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 53px;
+}
+
+#calculator #results .payment {
+  margin-top: 5px;
+  color: #333333;
+  font-family: "Fira Sans";
+  font-size: 87px;
+  font-weight: 400;
+  letter-spacing: 1.74px;
+  line-height: 92px;
+  margin-bottom: 38px;
+}
+
+#calculator #results .clear-button {
+  width: 90px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: #bfbfbf;
+  line-height: 46px;
+  color: #ffffff;
+  font-family: Mukta;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 23px;
+  bottom: 20px;
+}
+
+#calculator #results .clear-button:focus {
+  outline: none;
+}
+
+#calculator #results .clear-button:active {
+  -webkit-box-shadow: 0 0 0 0.2rem #6e298d;
+          box-shadow: 0 0 0 0.2rem #6e298d;
+}
+
+@media (max-width: 1200px) {
+  #calculator {
+    margin-bottom: 88px;
+  }
+  #calculator p {
+    margin-bottom: 14px;
+  }
+  #calculator #input-fields {
+    border-radius: 5px 5px 0 0;
+    height: initial;
+  }
+  #calculator #input-fields input {
+    height: 46px;
+    font-size: 17px;
+    letter-spacing: 0.34px;
+    line-height: 19px;
+  }
+  #calculator #input-fields .btn {
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    line-height: 46px;
+  }
+  #calculator #results {
+    padding: 38px 26px;
+    height: initial;
+    border-left: 1px solid #bfbfbf;
+    border-top: initial;
+    border-radius: 0 0 5px 5px;
+  }
+  #calculator #results .house img {
+    width: 74px;
+  }
+  #calculator #results .payment {
+    font-size: 46px;
+    letter-spacing: 0.92px;
+    line-height: 48px;
+    margin: 0;
+  }
+  #calculator #results .clear-button {
+    background: initial;
+    border: initial;
+    width: initial;
+    height: 28px;
+    color: #8cc63f;
+    font-family: Mukta;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 28px;
+    text-transform: uppercase;
+    right: 8px;
+    bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  padding-top: 139px;
+  background-image: linear-gradient(169deg, #6e298d 0%, #44298d 100%);
+}
+
+footer .unstyled-list li a {
+  font-family: "Fira Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+footer .social-title {
+  position: relative;
+  color: #ffffff;
+  font-family: "Fira Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34px;
+  margin-bottom: 46px;
+}
+
+footer .social-title:after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: 21px;
+  background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/semi-circular-down-arrow.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 31px;
+  height: 44px;
+}
+
+footer .social-links {
+  padding-bottom: 36px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.22);
+}
+
+footer .social-links a {
+  display: inline-block;
+}
+
+footer .social-links a:not(:last-child) {
+  margin-right: 47px;
+}
+
+footer .company-info {
+  color: #ffffff;
+  font-family: "Fira Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+footer .copyright-bar {
+  margin-top: 67px;
+  padding-top: 41px;
+  background-color: rgba(0, 0, 0, 0.17);
+}
+
+footer .copyright-bar .copyright-info {
+  position: relative;
+  padding-bottom: 58px;
+  overflow: hidden;
+}
+
+footer .copyright-bar .copyright-info .copyright {
+  color: #ffffff;
+  font-family: "Fira Sans";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+footer .copyright-bar .copyright-info .disclaimer {
+  margin-top: 8px;
+  color: #ffffff;
+  font-family: "Fira Sans";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+footer .copyright-bar .copyright-info .monsters {
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+  -webkit-clip-path: inset(0px 0px 30px 0px);
+          clip-path: inset(0px 0px 30px 0px);
+}
+
+footer .copyright-bar .affiliations {
+  padding-bottom: 34px;
+}
+
+@media (max-width: 1200px) {
+  footer {
+    padding-top: 60px;
+  }
+  footer .unstyled-list li a {
+    font-size: 18px;
+    line-height: 50px;
+  }
+  footer .social-title {
+    font-size: 27px;
+    line-height: initial;
+    margin-bottom: 38px;
+    margin-top: 35px;
+  }
+  footer .social-title:after {
+    content: initial;
+  }
+  footer .social-links {
+    padding-bottom: 33px;
+    margin-bottom: 65px;
+  }
+  footer .social-links img {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  footer .company-info {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  footer .copyright-bar {
+    margin-top: 45px;
+  }
+  footer .copyright-bar .affiliations img {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.6;
+    margin-bottom: 28px;
+  }
+  footer .copyright-bar .copyright-info {
+    padding-bottom: 70px;
+  }
+  footer .copyright-bar .copyright-info .copyright {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 400;
+  }
+  footer .copyright-bar .copyright-info .disclaimer {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 600;
+  }
+}
+
+/* ==========================================================================
+   Stepped App
+   ========================================================================== */
+#stepped-app {
+  min-height: calc(100vh - 70px);
+}
+
+#stepped-app .heading {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#stepped-app .form {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#stepped-app .form-control {
+  height: 28px;
+  color: #888888;
+  font-family: "Helvetica Neue";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+
+#stepped-app .btn {
+  min-width: 358px;
+  line-height: 73px;
+}
+
+@media (max-width: 576px) {
+  #stepped-app .btn {
+    min-width: 100%;
+  }
+}
+
+.credit-score-disclaimer {
+  margin-top: -15px;
+  color: #6e298d;
+  font-family: "Caveat Brush";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 51px;
+}
+
+.credit-score-disclaimer img {
+  vertical-align: baseline;
+}
+
+.back {
+  height: 41px;
+  border-radius: 5px;
+  border: 1px solid #d0d0d0;
+  background-color: #fdfdfd;
+  color: #888888;
+  font-family: "Fira Sans";
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.back:focus, .back:active {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem #6e298d;
+          box-shadow: 0 0 0 0.2rem #6e298d;
+}
+
+/* ==========================================================================
+   Thank You Message
+   ========================================================================== */
+@media (max-width: 992px) {
+  .thank-you {
+    margin: 150px auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

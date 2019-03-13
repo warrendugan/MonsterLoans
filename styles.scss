@@ -1,0 +1,1035 @@
+/* ==========================================================================
+   Delivery Tools
+   Polyfill: https://autoprefixer.github.io/
+   Minify: https://www.minifier.org/
+   ========================================================================== */
+
+/* ==========================================================================
+   Reset Styles
+   ========================================================================== */
+body {
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Fira Sans", sans-serif;
+	transition: filter 300ms ease;
+	&.blur {
+		section:not(#mobile-lead-form) {
+			transition: filter 300ms ease;
+			filter: blur(4px);
+		}
+	}
+}
+
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+::selection {
+	background-color: #6e298d;
+	color: #8cc63f;
+}
+
+p {
+	font-family: "Helvetica Neue", "Arimo", sans-serif;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 25px;
+	@media (max-width: 1920px) {
+		font-size: 15px;
+		line-height: 21px;
+	}
+	@media (max-width: 768px) {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #333333;
+	font-family: "Fira Sans";
+}
+
+h2.heading {
+	font-size: 55px;
+	font-weight: 700;
+	line-height: 61px;
+	@media (max-width: 1920px) {
+		font-size: 40px;
+		line-height: 47px;
+	}
+	@media (max-width: 768px) {
+		font-size: 23px;
+		line-height: 26px;
+	}
+}
+
+h3.heading {
+	font-family: "Fira Sans";
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 35px;
+	@media (max-width: 1920px) {
+		font-size: 24px;
+		line-height: 29px;
+	}
+	@media (max-width: 768px) {
+		font-size: 18px;
+		line-height: 20px;
+	}
+}
+
+h5.subheading {
+	color: #333333;
+	font-family: "Fira Sans";
+	font-size: 23px;
+	font-weight: 700;
+	line-height: 25px;
+	@media (max-width: 1920px) {
+		font-size: 19px;
+		line-height: 24px;
+	}
+	@media (max-width: 768px) {
+		font-size: 16px;
+		line-height: 25px;
+	}
+}
+
+.text-primary {
+	color: #8cc63f !important;
+}
+
+a.text-primary,
+button.text-primary {
+	&:hover,
+	&:active {
+		color: darken(#8cc63f, 15%) !important;
+	}
+}
+
+.text-link {
+	color: #1081e0;
+}
+
+a.text-link,
+button.text-link {
+	&:hover,
+	&:active {
+		color: darken(#1081e0, 15%) !important;
+	}
+}
+
+.highlight-text {
+	padding: 0 6px;
+	background-color: rgba(140, 198, 63, 0.19);
+}
+
+.container {
+	@media (min-width: 1920px) {
+		max-width: 1640px;
+	}
+}
+
+.unstyled-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul {
+	list-style: initial;
+	padding-left: 40px;
+}
+
+.check-bullets {
+	padding-left: 25px;
+	list-style: initial;
+	li {
+		padding-left: 12px;
+		margin-bottom: 14px;
+		list-style-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/green-checkmark.png");
+		color: #333333;
+		font-family: "Fira Sans";
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 26px;
+		@media (max-width: 992px) {
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+}
+
+.btn-primary:not(:disabled):not(.disabled) {
+	background-color: #8cc63f;
+	color: #ffffff;
+	font-family: Mukta;
+	font-size: 27px;
+	font-weight: 700;
+	letter-spacing: 1.35px;
+	line-height: 69px;
+	text-transform: uppercase;
+	border: initial;
+	padding: 0 32px;
+	transition: all 300ms ease;
+
+	&:hover,
+	&:active {
+		background-color: #6f9e32;
+		box-shadow: 0px 10px 20px 0px rgba(#6f9e32, 0.8%);
+		transition: all 300ms ease;
+	}
+
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.7px;
+		line-height: 39px;
+	}
+}
+
+.floating {
+	transition: all 300ms ease;
+	font-size: 12px !important;
+	line-height: 16px !important;
+	height: 16px !important;
+	top: -16px;
+	margin: 0;
+}
+
+.hide-placeholder {
+	&::-webkit-input-placeholder {
+		/* WebKit browsers */
+		color: transparent !important;
+	}
+	&:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: transparent !important;
+	}
+	&::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: transparent !important;
+	}
+	&:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		color: transparent !important;
+	}
+}
+
+.form-group {
+	position: relative;
+	background-color: white;
+	margin-bottom: 0;
+
+	&.floating-label {
+		.form-control,
+		label {
+			color: #888888;
+			font-family: "Helvetica Neue";
+			color: #888888;
+			font-size: 25px;
+			font-weight: 400;
+			line-height: 36px;
+			height: 36px;
+
+			@media (max-width: 1200px) {
+				height: 28px;
+				font-size: 17px;
+				line-height: 28px;
+				background-color: transparent;
+			}
+		}
+
+		.form-control {
+			@extend .hide-placeholder;
+			border: initial;
+			border-radius: 0;
+			border-bottom: 1px solid #707070;
+			padding-left: 10px;
+			transition: all 300ms ease;
+
+			&:focus {
+				outline: none;
+				box-shadow: none;
+				border-bottom: 1px solid #8cc63f;
+				transition: all 300ms ease;
+				caret-color: #8cc63f;
+
+				& ~ label {
+					@extend .floating;
+				}
+			}
+
+			&:not(:placeholder-shown) ~ label {
+				@extend .floating;
+			}
+		}
+
+		label {
+			padding-left: 10px;
+			position: absolute;
+			top: -5px;
+			transition: all 300ms ease;
+
+			@media (max-width: 1200px) {
+				top: 0;
+			}
+		}
+	}
+}
+
+form[_lpChecked] .form-control:invalid,
+.form-control.error {
+	background-color: rgba(#ff7600, 0.15) !important;
+}
+
+.background-triangles {
+	background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/background-triangles.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 20px;
+	img {
+		width: 100%;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+	}
+}
+
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+header {
+	position: relative;
+	z-index: 4;
+	background-color: transparent;
+	transition: all 300ms ease;
+	top: 0;
+
+	.logo,
+	.links ul {
+		padding: 16px 0;
+	}
+
+	.links {
+		a {
+			padding: 20px 30px 10px;
+			color: #333333;
+			font-family: "Fira Sans";
+			font-size: 17px;
+			font-weight: 400;
+			line-height: 28px;
+			text-decoration: none;
+			transition: all 300ms ease;
+			&:hover {
+				color: darken(#333333, 15%);
+				text-decoration: none;
+				transition: all 300ms ease;
+			}
+			&.call-to-action {
+				color: #8cc63f;
+				&:hover {
+					box-shadow: 0 10px 20px rgba(140, 198, 63, 0.13);
+					border-radius: 5px;
+					background-color: #ffffff;
+					transition: all 300ms ease;
+				}
+			}
+		}
+	}
+	@media (max-width: 1200px) {
+		height: 70px;
+		&.bg-white {
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+		}
+		.navbar-toggler {
+			border: initial;
+			&:active,
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Intro Hero
+   ========================================================================== */
+#intro-hero {
+	position: relative;
+	margin-top: 70px;
+	top: -30px;
+	padding-top: 30px;
+	padding-bottom: 700px / 1641px * 100%;
+	.background {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/fha-loan-hero.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		&#background-va {
+			display: none;
+			background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/va-loan-hero.png");
+		}
+	}
+
+	.block {
+		max-width: 660px;
+		left: 78px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&#va {
+			display: none;
+			max-width: 612px;
+			left: initial;
+			right: 137px;
+			.heading {
+				color: white;
+			}
+
+			.check-bullets li {
+				color: white;
+			}
+		}
+
+		.check-bullets {
+			margin-top: 24px;
+		}
+	}
+	@media (max-width: 1200px) {
+		top: initial;
+		.block {
+			&#fha {
+				max-width: 500px;
+				left: 15px;
+			}
+			&#va {
+				max-width: 500px;
+				right: 15px;
+			}
+		}
+	}
+	@media (max-width: 992px) {
+		margin-bottom: 15rem;
+		.block {
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+			background-color: white;
+			padding: 16px 12px;
+			border-radius: 5px;
+			max-width: 422px !important;
+			width: 100%;
+			margin: 0 auto;
+			left: 50% !important;
+			right: initial !important;
+			transform: translateX(-50%);
+			top: calc(100% - 45px);
+
+			.heading {
+				color: #333333 !important;
+				font-size: 23px;
+				line-height: 26px;
+				text-align: center;
+			}
+
+			.check-bullets {
+				max-width: 252px;
+				display: block;
+				margin: 0 auto;
+
+				li {
+					color: #333333 !important;
+					font-size: 12px;
+					line-height: 17px;
+				}
+			}
+		}
+	}
+	@media (max-width: 576px) {
+		.block {
+			max-width: 302px !important;
+			.check-bullets {
+				max-width: 232px;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Lead Form
+   ========================================================================== */
+#lead-form {
+	position: relative;
+	top: -100px;
+
+	.form-container {
+		padding: 18px 31px 10px 34px;
+		box-shadow: 0 13px 26px rgba(0, 0, 0, 0.05);
+		border-radius: 5px;
+		background-color: #ffffff;
+
+		.form {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			margin-bottom: 16px;
+
+			.form-group {
+				&:not(:first-child) {
+					margin-left: 23px;
+				}
+
+				&:last-child {
+					margin-left: 39px;
+				}
+
+				.form-control,
+				label {
+					height: 28px;
+					font-size: 17px;
+					line-height: 28px;
+				}
+			}
+
+			.btn-primary {
+				border-radius: 5px;
+				font-size: 16px;
+				font-weight: 600;
+				letter-spacing: 0.8px;
+				line-height: 69px;
+				width: 214px;
+			}
+		}
+		.form-text {
+			font-family: "Helvetica Neue";
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 28px;
+			color: #888888;
+		}
+	}
+	@media (max-width: 1200px) {
+		top: -50px;
+		.form-container .form .btn-primary {
+			width: 184px;
+			white-space: nowrap;
+		}
+		#mobile-quote {
+			width: 162px;
+			padding: 0 18px;
+			transition: width 300ms ease;
+			&.sticky {
+				position: fixed;
+				top: 70px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				z-index: 3;
+			}
+			&.expand {
+				width: 100vw;
+				transition: width 300ms ease;
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+				border-radius: 0;
+			}
+			&.open {
+				transform: translate(-50%, calc(-100% - 60px));
+				transition: transform 300ms ease;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		top: initial;
+	}
+}
+
+/* ==========================================================================
+   Mobile Lead Form
+   ========================================================================== */
+#mobile-lead-form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	z-index: -1;
+	opacity: 0;
+	background-color: rgba(#ffffff, 0.8);
+
+	&.slideInDown {
+		z-index: 6;
+	}
+
+	.container {
+		position: relative;
+		z-index: 7;
+		filter: blur(-4px);
+		#close {
+			position: absolute;
+			top: calc(-20px + 29px);
+			right: calc(-45px + 27px);
+		}
+		.logo {
+			margin-top: 95px;
+			margin-bottom: 30px;
+		}
+		.subheading {
+			color: #2c2c2c;
+			font-family: "Fira Sans";
+			font-size: 17px;
+			font-weight: 700;
+			line-height: 20px;
+			margin-bottom: 60px;
+		}
+		.form-group {
+			background-color: transparent;
+		}
+		.form-control {
+			margin-bottom: 50px;
+		}
+		.form-text {
+			font-family: "Helvetica Neue";
+			font-size: 11px;
+			font-weight: 400;
+			line-height: 16px;
+			color: #888888;
+			width: 202px;
+			margin: 32px auto 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   Value Props
+   ========================================================================== */
+#value-props {
+	.icon {
+		height: 150px;
+	}
+	.value-prop {
+		@media (max-width: 1200px) {
+			.icon {
+				height: initial;
+			}
+
+			p {
+				max-width: 167px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Reviews
+   ========================================================================== */
+#reviews {
+	#typing {
+		color: #7b7b7b;
+	}
+	.reviews {
+		padding-top: 5rem;
+	}
+}
+
+/* ==========================================================================
+   Affiliations
+   ========================================================================== */
+#affiliations {
+	background: linear-gradient(169deg, #6e298d 0%, #44298d 100%);
+}
+
+/* ==========================================================================
+   Loan Calculator
+   ========================================================================== */
+#calculator {
+	p {
+		margin-bottom: 60px;
+	}
+
+	#input-fields {
+		height: 474px;
+		border-radius: 5px 0 0 5px;
+		border: 1px solid #bfbfbf;
+		padding-left: calc(54px - 15px);
+		padding-right: calc(72px - 15px);
+		padding-top: 26px;
+		padding-bottom: 23px;
+		input {
+			height: 58px;
+			line-height: 58px;
+			border-radius: 5px;
+			border: 1px solid #bfbfbf;
+			background-color: #ffffff;
+			margin-bottom: 23px;
+			padding-left: 22px;
+			font-family: "Helvetica Neue";
+			font-size: 25px;
+			font-weight: 400;
+			letter-spacing: 0.5px;
+			line-height: 28px;
+			&::-webkit-input-placeholder,
+			&:-moz-placeholder,
+			&::-moz-placeholder,
+			&:-ms-input-placeholder {
+				color: #bfbfbf !important;
+			}
+			&:focus {
+				box-shadow: 0 0 0 0.2rem #8cc63f;
+			}
+		}
+		.btn {
+			width: 100%;
+			line-height: 58px;
+			border-radius: 5px;
+			background-color: #8cc63f;
+			color: #ffffff;
+			font-family: Mukta;
+			font-size: 17px;
+			font-weight: 600;
+			letter-spacing: 0.85px;
+			text-transform: uppercase;
+			&:active {
+				box-shadow: 0 0 0 0.2rem #6e298d;
+			}
+		}
+	}
+
+	#results {
+		padding-top: 81px;
+		padding-bottom: 78px;
+		height: 474px;
+		border-radius: 0 5px 5px 0;
+		border: 1px solid #bfbfbf;
+		border-left: initial;
+		position: relative;
+		.payment-title {
+			color: #333333;
+			font-family: "Fira Sans";
+			font-size: 21px;
+			font-weight: 400;
+			line-height: 53px;
+		}
+		.payment {
+			margin-top: 5px;
+			color: #333333;
+			font-family: "Fira Sans";
+			font-size: 87px;
+			font-weight: 400;
+			letter-spacing: 1.74px;
+			line-height: 92px;
+			margin-bottom: 38px;
+		}
+		.clear-button {
+			width: 90px;
+			height: 46px;
+			border-radius: 5px;
+			background-color: #bfbfbf;
+			line-height: 46px;
+			color: #ffffff;
+			font-family: Mukta;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: 0.6px;
+			text-transform: uppercase;
+			position: absolute;
+			right: 23px;
+			bottom: 20px;
+			&:focus {
+				outline: none;
+			}
+			&:active {
+				box-shadow: 0 0 0 0.2rem #6e298d;
+			}
+		}
+	}
+	@media (max-width: 1200px) {
+		margin-bottom: 88px;
+
+		p {
+			margin-bottom: 14px;
+		}
+
+		#input-fields {
+			border-radius: 5px 5px 0 0;
+			height: initial;
+
+			input {
+				height: 46px;
+				font-size: 17px;
+				letter-spacing: 0.34px;
+				line-height: 19px;
+			}
+			.btn {
+				font-size: 14px;
+				letter-spacing: 0.7px;
+				line-height: 46px;
+			}
+		}
+
+		#results {
+			padding: 38px 26px;
+			height: initial;
+			border-left: 1px solid #bfbfbf;
+			border-top: initial;
+			border-radius: 0 0 5px 5px;
+
+			.house img {
+				width: 74px;
+			}
+
+			.payment {
+				font-size: 46px;
+				letter-spacing: 0.92px;
+				line-height: 48px;
+				margin: 0;
+			}
+
+			.clear-button {
+				background: initial;
+				border: initial;
+				width: initial;
+				height: 28px;
+				color: #8cc63f;
+				font-family: Mukta;
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 0.6px;
+				line-height: 28px;
+				text-transform: uppercase;
+				right: 8px;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+	padding-top: 139px;
+	background-image: linear-gradient(169deg, #6e298d 0%, #44298d 100%);
+	.unstyled-list {
+		li {
+			a {
+				font-family: "Fira Sans";
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 50px;
+				color: #ffffff;
+			}
+		}
+	}
+	.social-title {
+		position: relative;
+		color: #ffffff;
+		font-family: "Fira Sans";
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 34px;
+		margin-bottom: 46px;
+		&:after {
+			content: "";
+			position: absolute;
+			right: -45px;
+			top: 21px;
+			background-image: url("https://monsterloans471329736.wpcomstaging.com/wp-content/uploads/2019/03/semi-circular-down-arrow.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 31px;
+			height: 44px;
+		}
+	}
+	.social-links {
+		padding-bottom: 36px;
+		margin-bottom: 40px;
+		border-bottom: 2px solid rgba(#ffffff, 0.22);
+		a {
+			display: inline-block;
+			&:not(:last-child) {
+				margin-right: 47px;
+			}
+		}
+	}
+	.company-info {
+		color: #ffffff;
+		font-family: "Fira Sans";
+		font-size: 17px;
+		font-weight: 400;
+		line-height: 30px;
+	}
+
+	.copyright-bar {
+		margin-top: 67px;
+		padding-top: 41px;
+		background-color: rgba(0, 0, 0, 0.17);
+		.copyright-info {
+			position: relative;
+			padding-bottom: 58px;
+			overflow: hidden;
+			.copyright {
+				color: #ffffff;
+				font-family: "Fira Sans";
+				font-size: 20px;
+				font-weight: 600;
+				line-height: 30px;
+			}
+			.disclaimer {
+				margin-top: 8px;
+				color: #ffffff;
+				font-family: "Fira Sans";
+				font-size: 15px;
+				font-weight: 400;
+			}
+			.monsters {
+				position: absolute;
+				right: 0;
+				bottom: -35px;
+				clip-path: inset(0px 0px 30px 0px);
+			}
+		}
+		.affiliations {
+			padding-bottom: 34px;
+		}
+	}
+	@media (max-width: 1200px) {
+		padding-top: 60px;
+
+		.unstyled-list {
+			li {
+				a {
+					font-size: 18px;
+					line-height: 50px;
+				}
+			}
+		}
+		.social-title {
+			font-size: 27px;
+			line-height: initial;
+			margin-bottom: 38px;
+			margin-top: 35px;
+			&:after {
+				content: initial;
+			}
+		}
+		.social-links {
+			padding-bottom: 33px;
+			margin-bottom: 65px;
+			img {
+				transform: scale(0.9);
+			}
+		}
+		.company-info {
+			font-size: 15px;
+			line-height: 20px;
+		}
+		.copyright-bar {
+			margin-top: 45px;
+			.affiliations img {
+				transform: scale(0.8);
+				opacity: 0.6;
+				margin-bottom: 28px;
+			}
+			.copyright-info {
+				padding-bottom: 70px;
+				.copyright {
+					font-size: 12px;
+					line-height: 13px;
+					font-weight: 400;
+				}
+				.disclaimer {
+					font-size: 12px;
+					line-height: 13px;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Stepped App
+   ========================================================================== */
+#stepped-app {
+	min-height: calc(100vh - 70px);
+	.heading {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	.form {
+		max-width: 750px;
+		margin: 0 auto;
+	}
+	.form-control {
+		height: 28px;
+		color: #888888;
+		font-family: "Helvetica Neue";
+		font-size: 17px;
+		font-weight: 400;
+		line-height: 28px;
+		margin-bottom: 50px;
+	}
+	.btn {
+		min-width: 358px;
+		line-height: 73px;
+		@media (max-width: 576px) {
+			min-width: 100%;
+		}
+	}
+}
+
+// Credit score disclaimer made global if needed for reuse
+.credit-score-disclaimer {
+	margin-top: -15px;
+	color: #6e298d;
+	font-family: "Caveat Brush";
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 51px;
+	img {
+		vertical-align: baseline;
+	}
+}
+
+// Back button styling made global if needed for reuse
+.back {
+	height: 41px;
+	border-radius: 5px;
+	border: 1px solid #d0d0d0;
+	background-color: #fdfdfd;
+	color: #888888;
+	font-family: "Fira Sans";
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 41px;
+	&:focus,
+	&:active {
+		outline: none;
+		box-shadow: 0 0 0 0.2rem #6e298d;
+	}
+}
+
+/* ==========================================================================
+   Thank You Message
+   ========================================================================== */
+.thank-you {
+	@media (max-width: 992px) {
+		margin: 150px auto;
+	}
+}
